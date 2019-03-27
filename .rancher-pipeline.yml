@@ -16,7 +16,7 @@ stages:
       buildContext: .
       tag: example-helloserver:${CICD_EXECUTION_SEQUENCE}
       pushRemote: true
-      registry: https://002043473771.dkr.ecr.cn-north-1.amazonaws.com.cn
+      registry: 002043473771.dkr.ecr.cn-north-1.amazonaws.com.cn
 - name: Deploy
   steps:
   - applyYamlConfig:
