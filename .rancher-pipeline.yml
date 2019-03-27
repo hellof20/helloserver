@@ -15,9 +15,9 @@ stages:
   - publishImageConfig:
       dockerfilePath: ./Dockerfile
       buildContext: .
-      tag: example-helloserver:${CICD_EXECUTION_SEQUENCE}
+      tag: hellof20/example-helloserver:${CICD_EXECUTION_SEQUENCE}
       pushRemote: true
-      registry: index.docker.io/hellof20
+      registry: hub.docker.io
 - name: Deploy
   steps:
   - applyYamlConfig:
