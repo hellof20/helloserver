@@ -17,7 +17,7 @@ stages:
       buildContext: .
       tag: example-helloserver:${CICD_EXECUTION_SEQUENCE}
       pushRemote: true
-      registry: 002043473771.dkr.ecr.cn-north-1.amazonaws.com.cn
+      registry: index.docker.io/hellof20
 - name: Deploy
   steps:
   - applyYamlConfig:
