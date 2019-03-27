@@ -4,6 +4,7 @@ stages:
   - runScriptConfig:
       image: golang:1.11
       shellScript: |-
+        pwd
         mkdir -p /go/src/github.com/rancher
         ln -s `pwd` /go/src/github.com/rancher/pipeline-example-go
         cd /go/src/github.com/rancher/pipeline-example-go
@@ -16,7 +17,7 @@ stages:
       buildContext: .
       tag: example-helloserver:${CICD_EXECUTION_SEQUENCE}
       pushRemote: true
-      registry: 002043473771.dkr.ecr.cn-north-1.amazonaws.com.cn
+      registry: index.docker.io
 - name: Deploy
   steps:
   - applyYamlConfig:
