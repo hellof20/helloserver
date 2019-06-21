@@ -1,0 +1,15 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+        golang: 1.12
+  build:
+    commands:
+       - go build -o ./bin/hello-server
+  post_build:
+    commands:
+      - echo Build completed on `date`       
+artifacts:
+  files:
+    - bin/hello-server
