@@ -4,11 +4,11 @@ This is a sample golang project to demonstrate the integration with rancher pipe
 
 ## Building
 
-`go build -o ./bin/hello-server`
+`go build -o ./bin/helloserver`
 
 ## Running
 
-`./bin/hello-server`
+`./bin/helloserver`
 
 # License
 
