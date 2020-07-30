@@ -3,13 +3,23 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-        golang: 1.12
+        golang: 1.13
+  pre_build:
+    commands:
+       - echo login into ECR
+       - $(aws ecr get-login --no-include-email --region cn-northwest-1)
   build:
     commands:
-       - go build -o ./bin/hello-server
+      - echo Build started on `date`
+      - go build -o ./bin/helloserver
+      - echo Building the Docker image...
+      - docker build -t helloserver .
+      - docker tag helloserver:latest 799967190878.dkr.ecr.cn-northwest-1.amazonaws.com.cn/helloserver:latest
   post_build:
     commands:
-      - echo Build completed on `date`       
+      - echo Build completed on `date`
+      - echo Pushing the Docker image...
+      - docker push 799967190878.dkr.ecr.cn-northwest-1.amazonaws.com.cn/helloserver:latest
 artifacts:
   files:
-    - bin/hello-server
+    - bin/helloserver
