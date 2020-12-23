@@ -6,7 +6,7 @@ import (
 	"net/http"
 )
 
-const webContent = "Hello World! 2020! ecr image! pwm"
+const webContent = "Helloserver copilot"
 
 func main() {
 	http.HandleFunc("/", helloHandler)
