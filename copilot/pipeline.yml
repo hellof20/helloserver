@@ -15,7 +15,7 @@ source:
   # has the following properties: repository, branch.
   properties:
     access_token_secret: github-token-helloserver-helloserver
-    branch: master
+    branch: main
     repository: https://github.com/hellof20/helloserver
 
 # The deployment section defines the order the pipeline will deploy
