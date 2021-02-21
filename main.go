@@ -1,13 +1,13 @@
 package main
 
 import (
-	"bytes"
+	// "bytes"
 	"fmt"
-	"io"
+	//"io"
 	"log"
 	"net/http"
-	"os"
-	"os/exec"
+	//"os"
+	//"os/exec"
 )
 
 const webContent = "Helloserver copilot 2022"
@@ -18,14 +18,15 @@ func main() {
 }
 
 func helloHandler(w http.ResponseWriter, r *http.Request) {
-	cmd := exec.Command("hostname")
-	var out bytes.Buffer
-	multi := io.MultiWriter(os.Stdout, &out)
-	cmd.Stdout = multi
+	// cmd := exec.Command("hostname")
+	// var out bytes.Buffer
+	// multi := io.MultiWriter(os.Stdout, &out)
+	// cmd.Stdout = multi
 
-	if err := cmd.Run(); err != nil {
-		log.Fatalln(err)
-	}
+	// if err := cmd.Run(); err != nil {
+	// 	log.Fatalln(err)
+	// }
 
-	fmt.Fprint(w, out.String())
+	// fmt.Fprint(w, out.String())
+	fmt.Fprint(w, webContent)
 }
