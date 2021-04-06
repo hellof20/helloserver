@@ -5,5 +5,5 @@ files:
     destination: /tmp
 hooks:
   ApplicationStart:
-    - location: Scripts/RunFunctionalTests.sh
+    - location: Scripts/start
       timeout: 30

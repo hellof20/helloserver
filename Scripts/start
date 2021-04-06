@@ -1,2 +1,4 @@
 #!/bin/bash
-bash helloserver
+pwd
+ls
+bash /tmp/helloserver
