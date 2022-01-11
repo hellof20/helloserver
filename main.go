@@ -14,7 +14,7 @@ const webContent = "hello google cloud!"
 
 func main() {
 	http.HandleFunc("/", helloHandler)
-	log.Fatal(http.ListenAndServe(":80", nil))
+	log.Fatal(http.ListenAndServe(":8080", nil))
 }
 
 func helloHandler(w http.ResponseWriter, r *http.Request) {
