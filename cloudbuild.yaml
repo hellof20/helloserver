@@ -7,3 +7,5 @@ steps:
     args: ['run', 'deploy', 'helloserver', 
            '--image=us-central1-docker.pkg.dev/$PROJECT_ID/$_REPO_NAME/helloserver:$TAG_NAME', 
            '--region', 'us-central1', '--platform', 'managed']
+options:
+  logging: CLOUD_LOGGING_ONLY
