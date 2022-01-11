@@ -10,7 +10,7 @@ import (
 	//"os/exec"
 )
 
-const webContent = "Helloserver 202201111121"
+const webContent = "hello google cloud!"
 
 func main() {
 	http.HandleFunc("/", helloHandler)
