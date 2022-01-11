@@ -3,9 +3,10 @@ steps:
     args: ['build', '-t', 
            'us-central1-docker.pkg.dev/$PROJECT_ID/helloserver-repo/helloserver:$TAG_NAME', '.']
 
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'us-central1-docker.pkg.dev/$PROJECT_ID/helloserver-repo/helloserver:$TAG_NAME']
+  
   - name: 'gcr.io/cloud-builders/gcloud'
     args: ['run', 'deploy', 'helloserver', 
            '--image=us-central1-docker.pkg.dev/$PROJECT_ID/helloserver-repo/helloserver:$TAG_NAME', 
            '--region', 'us-central1', '--platform', 'managed']
-images:
- - us-central1-docker.pkg.dev/$PROJECT_ID/helloserver-repo/helloserver:$TAG_NAME
